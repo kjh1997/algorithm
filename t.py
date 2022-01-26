@@ -1,5 +1,3 @@
-import sys
-import time
 N = 5
 cnt = 0
 x = 0
