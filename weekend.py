@@ -15,7 +15,6 @@ for test_case in range(1, T + 1):
                 break
     else:
         week_cnt = num // open_week
-        week_cnt = num // open_week
         if num == week_cnt * open_week:
             cnt_day += (week_cnt-1) * 7 
             num -= (week_cnt-1) * open_week
@@ -31,5 +30,7 @@ for test_case in range(1, T + 1):
             lecture_cnt += i
             if lecture_cnt == num:
                 break
+        
+        cnt_day -= week.index(1)
 
     print(f'#{test_case} {cnt_day}')
