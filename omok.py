@@ -40,36 +40,6 @@ for test_case in range(1, T + 1):
                     except Exception as e:
                         break
             
-                for k in range(1,5):
-                    print(k)
-                    try:
-                        if board[i-k][j-k] != "o":
-                            break
-                        if k == 4 and board[i-k][j-k] == "o":
-                            cnt +=1
-                            break
-                    except Exception as e:
-                        break
-            
-                for k in range(1,5):  
-                    try:  
-                        if board[i-k][j] != "o":
-                            break
-                        if k == 4 and board[i-k][j] == "o":
-                            cnt +=1
-                            break
-                    except Exception as e:
-                        break
-            
-                for k in range(1,5):    
-                    try:
-                        if board[i][j-k] != "o":
-                            break
-                        if k == 4 and board[i][j-k] == "o":
-                            cnt +=1
-                            break
-                    except Exception as e:
-                        break
             
                 for k in range(1,5):    
                     try:
@@ -81,17 +51,10 @@ for test_case in range(1, T + 1):
                     except Exception as e:
                         break
             
-                for k in range(1,5):    
-                    try:
-                        if board[i-k][j+k] != "o":
-                            break
-                        if k == 4 and board[i-k][j+k] == "o":
-                            cnt +=1
-                            break
-                    except Exception as e:
-                        break
+                
         if cnt >= 1:
             break 
+
     if cnt >= 1:
         result = "YES"
     else:
