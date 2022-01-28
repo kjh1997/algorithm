@@ -1,2 +1,1 @@
-
-print(int(0x1B3))
+print( 5 >> 43 )
