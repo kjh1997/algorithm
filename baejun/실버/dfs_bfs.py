@@ -1,41 +1,47 @@
 from collections import deque
+import sys
+N,M,V = map(int, sys.stdin.readline().split())
+data = {}
+for i in range(M):
+    a,  b = input().split()
+    if a not in data:  data[a] = [b]
+    if b not in data:  data[b] = [a]
+    data[a].append(b); data[b].append(a)
+for i in data:
+    data[i] = sorted(list(set(data[i])))
 
-N, M, V = map(int, input().split())
 
-graph = [[0] * (N + 1) for _ in range(N + 1)]
+def dfs(graph, start):
+    visit = []
+    stack = deque()
+    stack.append(start)
+    while stack:
+       # print(stack)
+        n = stack.pop()
+        if n not in visit:
+            visit.append(n)
+            stack.extend(graph[n][::-1])
+    return visit
+result = ""
+a = dfs(data, str(V))
+for i in a:
+    if i == a[len(a)-1]:result += i
+    else:result += i + " "
+print(result)
+def bfs(graph, start):
+    visit = []
+    queue = deque()
+    queue.append(start)
+    while queue:
+        n = queue.popleft()
+        if n not in visit:
+            visit.append(n)
+            queue.extend(graph[n])
+    return visit
 
-for _ in range(M):
-  m1, m2 = map(int, input().split())
-  # 노드 연결 하기
-  graph[m1][m2] = graph[m2][m1] = 1
-print(graph)
-# 너비 우선 탐색
-def bfs(start_v):
-  discoverd = [start_v]
-  # 리스트를 써서 pop(0)하게 되면 시간복잡도가 O(N)이다.
-  # 그래서 시간복잡도가 O(1)인 deque를 사용한다.
-  queue = deque() 
-  queue.append(start_v)
-  print(queue)
-
-  while queue:
-    v = queue.popleft()
-    print(v, end=' ')
-
-    for w in range(len(graph[start_v])):
-      if graph[v][w] == 1 and (w not in discoverd):
-        discoverd.append(w)
-        queue.append(w)
-
-# 깊이 우선 탐색
-def dfs(start_v, discoverd=[]):
-  discoverd.append(start_v)
-  print(start_v, end=' ')
-  print(graph)
-  for w in range(len(graph[start_v])):
-    if graph[start_v][w] == 1 and (w not in discoverd):
-      dfs(w, discoverd)
-
-dfs(V)
-print()
-bfs(V)
+result = ""
+a = bfs(data, str(V))
+for i in a:
+    if i == a[len(a)-1]:result += i
+    else:result += i + " "
+print(result)

@@ -22,3 +22,6 @@ print(result)
 sum_data = []
 
 # for i in range(len(result)):
+for i in range(result):
+    for j in range(len(result[0])):
+        
