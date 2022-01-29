@@ -1,7 +1,9 @@
-j = {1: [(0, 0),(1,0)]}
-a =j.popitem()
-x = a[1]
-key = a[0]
-for i in x:
-    print(i)
-    
+visit = [0] *3
+print(id(visit[0]))
+print(id(visit[1]))
+print(id(visit[2]))
+visit[1]=2
+print(visit)
+print(id(visit[0]))
+print(id(visit[1]))
+print(id(visit[2]))
