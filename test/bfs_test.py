@@ -1,6 +1,5 @@
 def dfs(v, cnt):
     for j in data[v]:
-        print(j)
         if not visit[j]:
             visit[j] = 1
             result.append(cnt+1)

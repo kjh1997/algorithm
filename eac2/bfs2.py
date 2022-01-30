@@ -1,6 +1,6 @@
 def dfs(node, depth):
     result.append(depth)
-    for j in new_list[node]:
+    for j in data[node]:
         if not visited[j]:
             visited[j] = 1
             print(visited)
@@ -12,13 +12,13 @@ for tc in range(1, T+1):
     result = []
     N, M = map(int, input().split())
     graph = [list(map(int, input().split())) for i in range(M)]
-    new_list = [[] for i in range(N)]
+    data = [[] for i in range(N)]
     if N > 1:
         for i in range(len(graph)):
-            new_list[graph[i][0]-1].append(graph[i][1]-1)
-            new_list[graph[i][1]-1].append(graph[i][0]-1)
+            data[graph[i][0]-1].append(graph[i][1]-1)
+            data[graph[i][1]-1].append(graph[i][0]-1)
         visited = [0] * N
-        for node in range(len(new_list)):
+        for node in range(len(data)):
             visited[node] = 1
             dfs(node, 1)
             visited[node] = 0

@@ -13,6 +13,7 @@ for test_case in range(1, T + 1):
                 if data[i-1][j-1] != 0: cnt += data[i-1][j-1]
             except: pass
             data[i][j]=cnt
+        
     print(f"#{test_case}")
     for i in data:
         x = ""
