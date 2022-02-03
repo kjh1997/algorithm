@@ -1,42 +1,29 @@
 from collections import deque 
-n, m = map(int, input().split()) 
-maze = [] 
-for i in range(n): maze.append(list(map(int, input()))) 
 dx = [-1, 1, 0, 0] 
 dy = [0, 0, -1, 1] 
-def bfs(x, y): 
-    queue = deque()
-    queue.append((x, y)) 
-    while queue: 
-        x, y = queue.popleft() 
-        for i in range(4): 
-            nx, ny = x + dx[i], y + dy[i] 
-            if nx < 0 or ny < 0 or nx >= n or ny >= m: 
-                continue 
-            if maze[nx][ny] == 0: 
-                continue 
-            if maze[nx][ny] == 1: 
-                maze[nx][ny] = maze[x][y] + 1 
-                
-                queue.append((nx, ny)) 
-    return maze[n-1][m-1] 
-print(bfs(0, 0))
+def bfs(maze, tc): 
+    q = deque()
+    q.append((1,1)) 
+    cnt = 0
+    while q: 
+        x, y = q.popleft() 
+        for i in range(len(dy)): 
+            mx, my = x + dx[i], y + dy[i] 
+            if mx < 0 or my < 0 or mx >= 100 or my >= 100: continue 
+            if maze[mx][my] == 1: continue 
+            if maze[mx][my] == 0: 
+                maze[x][y] += 100
+                q.append((mx, my)) 
+            if maze[mx][my] ==3:
+                print(f'#{tc} 1')
+                cnt =1
+                break
+        if cnt == 1: break
+        
+    if cnt == 0: print(f'#{tc} 0')
+    return
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+for tc in range(1,11):
+    start = input()
+    maze = [list(map(int,input())) for i in range(100)] 
+    bfs(maze, tc)

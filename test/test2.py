@@ -1,3 +1,2 @@
-a = {1:[1,2], 2:[3,4]}
-for i in a:
-    print(i)
+a = [list(map(int,"123"))]
+print(a)
