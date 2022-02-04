@@ -1,2 +1,3 @@
-a= (1,2,3,4,5,6)
-print(a[3])
+a = [0,0,1,0,1,1,0]
+print(len(a)-a[::-1].index(1)-1)
+print(a.count())

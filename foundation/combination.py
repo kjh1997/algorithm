@@ -1,6 +1,6 @@
 def combination(arr, r):
     global chosen, used
-
+    
     # 선택리스트에 조의 원소를 저장하다가 갯수가 r개가 되면 출력 후 함수를 종료한다.
     if len(chosen) == r:
         print(chosen)
@@ -20,7 +20,8 @@ def combination(arr, r):
             chosen.pop()
             used[nxt] = 0
 
-
+global data
+data = []
 arr = [1, 2, 3, 4, 5, 6 , 7]
 chosen = []
 used = [0 for _ in range(len(arr))]
