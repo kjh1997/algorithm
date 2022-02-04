@@ -1,4 +1,4 @@
-for tc in range(1):
+for tc in range(10):
     N=int(input())
     m=[list(map(str,input())) for _ in range(8)]
     l,cnt=len(m)-N+1,0

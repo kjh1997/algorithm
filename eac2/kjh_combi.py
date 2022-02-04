@@ -1,3 +1,6 @@
+from os import lstat
+
+
 def combinations(arr, al):
     if len(se) == al and sum(se) ==K:
         re.append(list(se))
@@ -20,7 +23,8 @@ for tc in range(int(input())):
     ST1 = arr.count(K)  
     for i in range(2,len(arr)+1): combinations(arr,i)
     print(f'#{tc+1} {len(re)+ST1}')
-### 위에는 내가 푼 것    
+### 위에는 내가 푼 것 
+
 def solve(idx, sum):
     global cnt
     if idx >= N:         
