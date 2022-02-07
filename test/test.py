@@ -1,4 +1,4 @@
-a=None
-if a:
-    print("1")
-else: print("@")
+a={'a':1}
+q=[a]
+c,d=q.pop()
+print(c,d)
