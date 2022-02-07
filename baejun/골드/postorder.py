@@ -39,7 +39,7 @@ class binarytree:
                         self.curnode.right=newnode
                         break
 
-    def postorder(self, root):
+    def postorder(self, root): # 후위순회
         stack=deque()
         result =[]
         stack.append(root)
@@ -51,7 +51,8 @@ class binarytree:
             if cur.right:
                 stack.append(cur.right)
         return result
-    def preorder(self, root):
+
+    def preorder(self, root): # 전위순회
         queue = deque()
         result =[root]
         queue.append(root)
@@ -73,7 +74,7 @@ class binarytree:
 
         return result
 
-    def inorder(self, root):
+    def inorder(self, root): # 중위순회
         queue= deque()
         result = []
         queue.append(root)
