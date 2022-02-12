@@ -1,6 +1,7 @@
 from collections import deque
 n,m = map(int,input().split())
 data = [[] for i in range(n+1)]
+visited=[0]*n
 print(data)
 for i in range(m):
     x,y=map(int,input().split())
@@ -15,6 +16,6 @@ def bfs(start):
         stack.extend(data[idx])
         data.pop(idx)
 cnt = 0
-while data:
-    x = data.pop(0)
+
+    
     bfs(x)
