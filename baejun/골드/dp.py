@@ -1,4 +1,7 @@
+import sys
 x = int(input())
+sys.setrecursionlimit(10000000)
+
 d= [0] *1001
 def dp(x):
     if x==0: return 1
