@@ -24,4 +24,3 @@ for i in range(int(input())):
     cnt,num=0,board[m]
     find_v(board)
     print(cnt)
-    
