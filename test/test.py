@@ -1,13 +1,26 @@
-a = set([1,2,3,4])
-b = set([3,4,5,6])
-print(a.intersection(b))
 
-def sum_ab(a,b):
-    for i in range(5):
-        yield (a,b)
-        print("?!@#")
+from collections import deque
+
+def find_v(data):
+    global num, cnt, idx
+    q=data
+    while True:
+        if q[0] == max(q): 
+            cnt +=1
+            if idx[0] == m: 
+                break
+            else:
+                idx.pop(0)
+                q.pop(0)
+        else: 
+            idx.append(idx.pop(0))
+            q.append(q.pop(0))
+
+for i in range(int(input())):
+    n,m = map(int,input().split())
+    board = list(map(int, input().split()))
+    idx=[i for i in range(n)]
     
-
-for i in range(1,10):
-    for j in sum_ab(i,i-1):
-        print(j)
+    cnt,num=0,board[m]
+    find_v(board)
+    print(cnt)
