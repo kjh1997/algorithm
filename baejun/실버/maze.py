@@ -19,5 +19,4 @@ def bfs(start):
                 if visited[nx][ny] ==0 and board[nx][ny] =='1':
                     visited[nx][ny]= visited[x][y]+1
                     q.append((nx,ny))
-
 print(bfs((0,0)))

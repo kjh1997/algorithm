@@ -18,4 +18,3 @@ def bfs(start):
 cnt = 0
 
     
-    bfs(x)
