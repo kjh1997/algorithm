@@ -1,1 +1,3 @@
-print(list(map(int,12334)))
+a=input()
+f=list(map(str,a))
+print(f)

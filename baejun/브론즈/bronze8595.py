@@ -1,2 +1,4 @@
+import re
 n = int(input())
-s = input()
+number= list(map(int,re.findall(r'\d+',input())))
+print(sum(number))
