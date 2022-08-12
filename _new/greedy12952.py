@@ -28,4 +28,4 @@ while True:
         ar4 = arr.copy()
         q.append((data -1, ar4,cnt+1))
         visit.append(data -1)
-        arr.pop()
+        arr.pop() 11
