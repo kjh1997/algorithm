@@ -2,8 +2,8 @@ import sys
 from collections import deque
 
 
-dx = [0,1,-1,0,1,-1,1,-1]
-dy=[1,1,-1,-1,0,1,-1,0]
+dx = [1,1,1,0,0,-1,-1,-1]
+dy=[1,0,-1,-1,1,1,0,-1]
 
 while True:
     w, h = map(int, sys.stdin.readline().split())
@@ -27,7 +27,7 @@ while True:
                     x, y = q.popleft()
                     visited[x][y] = True
 
-                    for k in range(5):
+                    for k in range(8):
                         if x+dx[k] < 0 or x+dx[k] >= h or y+dy[k] < 0 or y+dy[k] >= w:
                             continue
                         if m[x+dx[k]][y+dy[k]] == 1 and not visited[x+dx[k]][y+dy[k]]:
