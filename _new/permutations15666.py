@@ -1,4 +1,4 @@
-from itertools import permutations
+from itertools import permutations, combinations
 n,m=map(int,input().split())
 arr = list(map(int,input().split()))
 data = set(permutations(arr, m))
