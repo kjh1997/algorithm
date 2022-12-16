@@ -1,3 +1,4 @@
+from collections import deque
 def dfs(cur, cnt):
     visit[cur] = 1
     for n in x[cur]:
@@ -13,6 +14,6 @@ for _ in range(int(input())):
         x[u].append(v)
         x[v].append(u)
     visit = [0]*(N+1)
-    visit[1] = 0
-    cnt = dfs(1, 0)
+    cnt = dfs(1,0)
+
     print(cnt)
