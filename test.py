@@ -1,4 +1,17 @@
-from math import factorial
-n, k = map(int, input().split())
-result = factorial(n) // (factorial(k) * factorial(n - k))
-print(result % 10007)
+1
+import sys
+from itertools import combinations as cb
+N = int(sys.stdin.readline()) // 2
+M = 2*N
+stat = [list(map(int, sys.stdin.readline().split())) for _ in range(M)]
+for i, j in zip(stat, zip(*stat)):
+    print(i,j)
+newstat = [sum(i) + sum(j) for i, j in zip(stat, zip(*stat))]
+# print(newstat)
+allstat = sum(newstat) // 2
+
+mins = 65535
+for l in cb(newstat[:-1], N):
+    # print(allstat, l)
+    mins = min(mins, abs(allstat - sum(l)))
+print(mins)
