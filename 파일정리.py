@@ -19,4 +19,4 @@ for nums in range(1000001):
         elif j == len(nums) - 1:
             min_count = min(min_count, abs(int(nums) - target) + len(nums))
 
-print(min_coun)
+print(min_count)
