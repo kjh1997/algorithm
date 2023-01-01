@@ -1,8 +1,6 @@
 import sys
 input = sys.stdin.readline
-
 tc = int(input())
-
 data = [list(map(int,input().split())) for i in range(tc)]
 data = sorted(data, key= lambda x: x[1], reverse=True)
 ans = 0
