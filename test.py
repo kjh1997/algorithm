@@ -1,27 +1,23 @@
-n = int(input())
-data = list(map(int, input().split()))
-add, sub, mul, div = map(int, input().split())
-visited = [False for _ in range(n-1)]
-max_value = -int(1e9)
-min_value = int(1e9)
+n=20
+sieve = [True] * (n+1)
+for i in range(2, int(n**0.5) +1):
+    if sieve[i] ==True:
+        for j in range(i+i, n, i):
+            sieve[j]=False
 
-def dfs(depth, num, add, sub, mul, div):
-    print(depth, num, add, sub, mul, div)
-    global max_value, min_value
-    if depth == n:
-        max_value = max(max_value, num)
-        min_value = min(min_value, num)
-    else:
-        if add:
-            dfs(depth+1, num+data[depth], add-1, sub, mul, div)
-        if sub:
-            dfs(depth+1, num-data[depth], add, sub-1, mul, div)
-        if mul:
-            dfs(depth+1, num*data[depth], add, sub, mul-1, div)
-        if div:
-            dfs(depth+1, int(num/data[depth]), add, sub, mul, div-1)
+print([i for i in range(2,n) if sieve[i]==True])
 
-dfs(1, data[0], add, sub, mul, div)
+def prime_list(n):
+    # 에라토스테네스의 체 초기화: n개 요소에 True 설정(소수로 간주)
+    sieve = [True] * n
 
-print(max_value)
-print(min_value)
+    # n의 최대 약수가 sqrt(n) 이하이므로 i=sqrt(n)까지 검사
+    m = int(n ** 0.5)
+    for i in range(2, m + 1):
+        if sieve[i] == True:           # i가 소수인 경우
+            for j in range(i+i, n, i): # i이후 i의 배수들을 False 판정
+                sieve[j] = False
+
+    # 소수 목록 산출
+    return [i for i in range(2, n) if sieve[i] == True]
+print(prime_list(20))
