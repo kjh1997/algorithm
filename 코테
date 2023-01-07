@@ -1,0 +1,113 @@
+크기가 M x N인 바둑판(grid)에 개미 한마리가 있습니다. 개미는 바둑판의 왼쪽 위(grid[0][0])에 있습니다. 개미는 오른쪽이나 아래로만 움직일 수 있습니다. 개미가 나가야할 출구는 오른쪽 아래(grid[m-1][n-1])에 있습니다. 개미가 출구로 나갈 수 있는 길은 모두 몇 가지인지 출력하는 프로그램을 작성하세요.
+
+(예시) 3 X 6 grid
+
+개미
+
+출구
+
+Answer: 21
+
+
+
+
+from collections import deque
+
+
+n,m = map(int,input().split())
+
+q = deque()
+q.append([0,0])
+dx,dy = [1,0],[0,1]
+ans = 0
+while q:
+	x,y = q.popleft()   // x 0, y 0
+	if a == m-1 and b == n-1: ans +=1; continue
+	for i in range(2):
+		cx = x + dx[i]  // cx 1
+		cy = y + dy[i] // cy 0
+		if cx < m and cy < n:
+q.append([cx,cy])
+			
+print(ans)
+
+
+크기가 M x N인 바둑판(grid)에 개미 한마리가 있습니다. 개미는 바둑판의 왼쪽 위(grid[0][0])에 있습니다. 개미는 오른쪽이나 아래로만 움직일 수 있습니다. 개미가 나가야할 출구는 오른쪽 아래(grid[m-1][n-1])에 있습니다. 바둑판에는 장애물이 있습니다. 장애물은 바둑판에 1로 표시돼 있습니다. 장애물은 여러 개 있을 수 있습니다. 개미가 출구로 나갈 수 있는 길은 모두 몇 가지인지 출력하는 프로그램을 작성하세요.
+
+(예시) 3 X 6 grid
+
+개미
+장애물
+
+
+
+
+출구
+
+Answer: 9
+
+
+from collections import deque
+
+
+n,m = map(int,input().split())
+arr = [ list(map(int,input().split()) for i in range(n) ]
+
+q = deque()
+q.append([0,0])
+dx,dy = [1,0],[0,1]
+ans = 0
+while q:
+	x,y = q.popleft()   // x 0, y 0
+	if a == m-1 and b == n-1: ans +=1; continue
+	for i in range(2):
+		cx = x + dx[i]  // cx 1
+		cy = y + dy[i] // cy 0
+		if cx < m and cy < n and arr[cx][cy] != 1:
+q.append([cx,cy])
+			
+print(ans)
+
+
+
+
+바이너리 검색 트리(BST)는 아래 특징을 가집니다.
+현재 노드의 왼쪽에 있는 모든 하위 노드들은 현재 노드의 값 보다 작습니다.
+현재 노드의 오른쪽에 있는 모든 하위 노드들은 현재 노드의 값 보다 큽니다.
+현재 노드의 왼쪽이나 오른쪽에 있는 하위 트리들도 바이너리 검색 트리 입니다.
+바이너리 트리가 바이너리 검색 트리인지 검사하는 프로그램을 작성하세요.
+
+
+
+class TreeNode:
+    def __init__(self, val: int=0, left: TreeNode=None, right: TreeNode=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+root = makeBST()
+left = “”
+right = “”
+def checkLeft(a,b):
+	if a>b: return True
+	else: False
+
+def checkRight(a,b)
+	if a<b: return True
+	else: False
+def check(cur):
+	if cur.left == null and cur.right == null: return
+	if checkLeft(root.var, cur.left.val):
+		left = cur.left
+		check(left)
+	else: 
+		print(“False”) exit()
+
+	if checkRight(root.var cur.left.val):
+		right = cur.right
+		check(right)
+	else: 
+		print(“False”) exit()
+check(root)
+print(“True”)
+
