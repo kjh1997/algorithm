@@ -16,10 +16,8 @@ for n in d[1:]:
         r[i]=n
 ans = []
 last = len(r)-1
-print(t)
 for i in range(N-1,-1,-1):
     if t[i][0] == last:
         ans.append(t[i][1])
         last-=1
-print(len(r))
 print(*ans[::-1])
