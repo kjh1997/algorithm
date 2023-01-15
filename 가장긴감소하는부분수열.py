@@ -1,10 +1,12 @@
 import sys
 from bisect import bisect_left
 
-N = int(input())
+input = sys.stdin.readline
+
+n = int(input())
 data = list(map(int,input().split()))
 lis = []
-for num in data:
+for num in data[::-1]:
     if not lis:
         lis.append(num)
         continue
@@ -13,4 +15,4 @@ for num in data:
     else:
         idx = bisect_left(lis,num)
         lis[idx]=num
-print(len(lis),lis)
+print(len(lis))
