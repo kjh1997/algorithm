@@ -1,18 +1,40 @@
-const axios = require('axios')
+// function testAsync(){
+//     return new Promise((resolve,reject)=>{
+//         //here our function should be implemented 
+//         setTimeout(()=>{
+//             console.log("Hello from inside the testAsync function");
+//             resolve();
+//         ;} , 5000
+//         );
+//     });
+// }
 
-// const test = new Promise((resolve, reject)=>{
-//     setTimeout(()=>{
-//       reject("reject");
-//     }, 3000);
-//   });
-  
-//   test.then(result => console.log(result))
-//   .catch(error => console.log("tes" + error));
+// async function callerFun(){
+//     console.log("Caller");
+//     await testAsync();
+//     console.log("After waiting");
+// }
 
-axios.get("www.naver.com",{})
-.then(()=>{console.log("fadfadsf")})
-.catch(()=> {console.log("finish")})
+// callerFun();
 
-const a = "test"
-a = "test2"
-console.log(a)
+
+class people{
+    #name="";
+    #age=0;
+    constructor(name,age){
+        this.#name = name
+        this.#age = age
+    }
+    
+    getName(){
+        return this.#name
+    }
+    getAge(){
+        return this.#age
+    }
+
+}
+
+p = new people("kjh",25)
+console.log(p.getAge())
+
