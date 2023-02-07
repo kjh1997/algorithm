@@ -19,7 +19,7 @@ public class StreamMap {
 
                 ).map(i -> i * i).peek(i -> {
             if (i >= 30) {
-                System.out.println("test : " + i);
+                System.out.println("test.test : " + i);
             }
         }).forEach(System.out::println);
     }
