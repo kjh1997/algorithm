@@ -10,6 +10,9 @@ repositories {
 }
 
 dependencies {
+    implementation group: 'cglib', name: 'cglib', version: '3.2.11'
+
+
     compileOnly('org.projectlombok:lombok:1.18.20')
     annotationProcessor('org.projectlombok:lombok:1.18.20')
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'

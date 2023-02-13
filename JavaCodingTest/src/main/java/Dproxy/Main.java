@@ -8,8 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Cat cat = new Kitty();
-        TimeInvocationHandler handler = getTimeInvocationHandler(cat);
+        Cat cat = new Dproxy.Kitty();
+        Dproxy.TimeInvocationHandler handler = getTimeInvocationHandler(cat);
 
         Cat proxy = getProxy(handler);
 
